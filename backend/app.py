@@ -17,6 +17,10 @@ def create_app():
     from modules.user_management.routes import user_bp
     app.register_blueprint(user_bp, url_prefix="/api/users")
 
+    from modules.image_processing.routes import image_bp
+    app.register_blueprint(image_bp, url_prefix="/api/image")
+
+
     with app.app_context():
         db.create_all()
 
